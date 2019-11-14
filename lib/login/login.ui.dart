@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginUI extends StatefulWidget {
   @override
@@ -22,7 +23,10 @@ class _LoginUIState extends State<LoginUI> {
                 Center(
                     child: Text(
                   "LOGIN",
-                  style: TextStyle(fontSize: 32, color: Colors.blue,fontWeight: FontWeight.w400),
+                  style: TextStyle(
+                      fontSize: 32,
+                      color: Colors.blue,
+                      fontWeight: FontWeight.w400),
                 ))
               ],
             ),
@@ -38,7 +42,11 @@ class _LoginUIState extends State<LoginUI> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(Icons.mail_outline),
+                      Icon(
+                        Icons.mail_outline,
+                        size: 32,
+                        color: Colors.grey,
+                      ),
                       SizedBox(width: 16),
                       Expanded(
                         child: TextField(
@@ -53,7 +61,11 @@ class _LoginUIState extends State<LoginUI> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(Icons.lock_outline),
+                      Icon(
+                        Icons.lock_outline,
+                        size: 32,
+                        color: Colors.grey,
+                      ),
                       SizedBox(width: 16),
                       Expanded(
                         child: TextField(
@@ -67,8 +79,7 @@ class _LoginUIState extends State<LoginUI> {
                   width: MediaQuery.of(context).size.width,
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(8))
-                    ),
+                        borderRadius: BorderRadius.all(Radius.circular(8))),
                     padding: EdgeInsets.all(16),
                     child: Text(
                       "Sign In",
@@ -80,15 +91,20 @@ class _LoginUIState extends State<LoginUI> {
                 ),
                 SizedBox(height: 16),
                 RichText(
-
                   text: TextSpan(children: [
                     TextSpan(
                         text: "Don't have account?",
-                        style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold)),
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16)),
                     TextSpan(text: "   "),
                     TextSpan(
                         text: "Create new one",
-                        style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold))
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold))
                   ]),
                 ),
                 SizedBox(height: 16),
@@ -104,28 +120,28 @@ class _LoginUIState extends State<LoginUI> {
                   width: MediaQuery.of(context).size.width,
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(8))
-                    ),
-                    padding: EdgeInsets.all(16),
+                        borderRadius: BorderRadius.all(Radius.circular(8))),
+                    padding: EdgeInsets.all(12),
                     child: Stack(
-
-
 //                      mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        Align( alignment: Alignment.centerLeft,
-                            child: Icon(Icons.gamepad)),
-
+                        Align(
+                            alignment: Alignment.centerLeft,
+                            child: Image.asset(
+                              "assets/google-icon.png",
+                              height: 28,
+                            )),
                         Align(
                           alignment: Alignment.center,
                           child: Text(
                             "Sign In with Google",
-                            style: TextStyle(color: Colors.white, fontSize: 16),
+                            style: TextStyle(color: Colors.black, fontSize: 16),
                           ),
                         ),
                       ],
                     ),
                     onPressed: () {},
-                    color: Colors.blue,
+                    color: Colors.white,
                   ),
                 ),
                 SizedBox(height: 24),
@@ -133,15 +149,19 @@ class _LoginUIState extends State<LoginUI> {
                   width: MediaQuery.of(context).size.width,
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(8))
-                    ),
+                        borderRadius: BorderRadius.all(Radius.circular(8))),
                     padding: EdgeInsets.all(16),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(Icons.gamepad,color: Colors.white,),
-                        SizedBox(width: 16,),
+                        Icon(
+                          FontAwesomeIcons.facebookF,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 16,
+                        ),
                         Text(
                           "Sign In with facebook",
                           style: TextStyle(color: Colors.white, fontSize: 16),
@@ -149,7 +169,7 @@ class _LoginUIState extends State<LoginUI> {
                       ],
                     ),
                     onPressed: () {},
-                    color: Colors.blue,
+                    color: Colors.blue.shade900,
                   ),
                 ),
               ],
