@@ -116,7 +116,7 @@ class _DashboardUIState extends State<DashboardUI> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 CircleAvatar(
-                  backgroundColor: Colors.grey.shade900,
+                  backgroundColor: Colors.grey.shade700,
                   radius: 48,
                   child: Icon(
                     FontAwesomeIcons.solidUserCircle,
@@ -208,14 +208,14 @@ class _DashboardUIState extends State<DashboardUI> {
                   SizedBox(
                     height: 16,
                   ),
-                  Row(
-                    children: <Widget>[
-                      InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (c) => AboutUsUI()));
-                        },
-                        child: Container(
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (c) => AboutUsUI()));
+                    },
+                    child: Row(
+                      children: <Widget>[
+                        Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.all(
                                 Radius.circular(150),
@@ -229,15 +229,15 @@ class _DashboardUIState extends State<DashboardUI> {
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Text(
-                        "About Us",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      )
-                    ],
+                        SizedBox(
+                          width: 16,
+                        ),
+                        Text(
+                          "About Us",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        )
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 16,
@@ -270,14 +270,15 @@ class _DashboardUIState extends State<DashboardUI> {
                   SizedBox(
                     height: 16,
                   ),
-                  Row(
-                    children: <Widget>[
-                      InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (c) => SettingsUI()));
-                        },
-                        child: Container(
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (c) => SettingsUI()));
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: <Widget>[
+                        Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.all(
                                 Radius.circular(150),
@@ -291,15 +292,15 @@ class _DashboardUIState extends State<DashboardUI> {
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Text(
-                        "Setting",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      )
-                    ],
+                        SizedBox(
+                          width: 16,
+                        ),
+                        Text(
+                          "Setting",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        )
+                      ],
+                    ),
                   ),
                 ],
               ),

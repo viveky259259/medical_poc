@@ -1,5 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:medical_poc/dashboard/dashboard.dart';
+import 'package:medical_poc/registration/registration.dart';
 
 class LoginUI extends StatefulWidget {
   @override
@@ -7,6 +10,16 @@ class LoginUI extends StatefulWidget {
 }
 
 class _LoginUIState extends State<LoginUI> {
+  void gotoRegister() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => RegistrationUI()));
+  }
+
+  void gotoDashboard() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => DashboardUI()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +98,9 @@ class _LoginUIState extends State<LoginUI> {
                       "Sign In",
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      gotoDashboard();
+                    },
                     color: Colors.blue,
                   ),
                 ),
@@ -101,6 +116,10 @@ class _LoginUIState extends State<LoginUI> {
                     TextSpan(text: "   "),
                     TextSpan(
                         text: "Create new one",
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            gotoRegister();
+                          },
                         style: TextStyle(
                             fontSize: 16,
                             color: Colors.blue,

@@ -41,18 +41,44 @@ class _RegistrationUIState extends State<RegistrationUI> {
                       SizedBox(
                         height: 16,
                       ),
-                      CircleAvatar(
-                        child: Icon(
-                          FontAwesomeIcons.userAlt,
-                          size: 48,
+                      SizedBox(
+                        height: 124,
+                        width: 124,
+//                        width: MediaQuery.of(context).size.width,
+                        child: Stack(
+//                          fit: StackFit.passthrough,
+                          children: <Widget>[
+                            Card(
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Image.asset(
+                                  "assets/user.png",
+                                  height: 64,
+                                ),
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(150)),
+                              ),
+                            ),
+                            Positioned(
+                              top: 4,
+                              right: 4,
+                              child: CircleAvatar(
+                                  backgroundColor: Colors.pink,
+                                  child: Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                  )),
+                            )
+                          ],
                         ),
-                        radius: 64,
                       ),
                       SizedBox(
                         height: 16,
                       ),
                       Container(
-                        color: Colors.blue.shade900,
+                        color: Colors.blue.shade600,
                         padding: EdgeInsets.all(16),
                         child: Row(
                           children: <Widget>[

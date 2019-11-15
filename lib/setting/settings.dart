@@ -9,11 +9,13 @@ class _SettingsUIState extends State<SettingsUI> {
   double sliderValue = 1;
   bool hasSearchByRadius = false;
   bool hasOrderByAscending = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Settings"),
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -27,7 +29,7 @@ class _SettingsUIState extends State<SettingsUI> {
                 Text(
                   'Search by Radius',
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.grey.shade700,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -50,14 +52,14 @@ class _SettingsUIState extends State<SettingsUI> {
                 Text(
                   'DISTANCE',
                   style: TextStyle(
-                      color: Colors.black38,
+                      color: hasSearchByRadius ? Colors.black : Colors.black38,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   "50 Km",
                   style: TextStyle(
-                      color: Colors.black38,
+                      color: hasSearchByRadius ? Colors.black : Colors.black38,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 )
@@ -71,7 +73,7 @@ class _SettingsUIState extends State<SettingsUI> {
                 Text(
                   'Radius',
                   style: TextStyle(
-                    color: Colors.black26,
+                    color: hasSearchByRadius ? Colors.black : Colors.black26,
                     fontSize: 16,
                   ),
                 ),
@@ -80,8 +82,10 @@ class _SettingsUIState extends State<SettingsUI> {
                 ),
                 Expanded(
                   child: Slider(
-                    activeColor: Colors.black26,
-                    inactiveColor: Colors.black26,
+                    activeColor:
+                        hasSearchByRadius ? Colors.black : Colors.black26,
+                    inactiveColor:
+                        hasSearchByRadius ? Colors.black : Colors.black26,
                     value: sliderValue,
                     max: 1,
                     min: 0,
@@ -100,7 +104,7 @@ class _SettingsUIState extends State<SettingsUI> {
             child: Text(
               "Order By",
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.grey.shade700,
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),
@@ -127,7 +131,7 @@ class _SettingsUIState extends State<SettingsUI> {
             child: Text(
               "Select Language",
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.grey.shade700,
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),
@@ -152,12 +156,15 @@ class _SettingsUIState extends State<SettingsUI> {
                     )
                   ],
                 ),
-                Divider(),
+                Divider(
+                  color: Colors.black,
+                  thickness: 1,
+                ),
                 Row(
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text("English"),
+                      child: Text("Arabic"),
                     ),
                   ],
                 )
@@ -174,14 +181,14 @@ class _SettingsUIState extends State<SettingsUI> {
                 Text(
                   "Current Location",
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.grey.shade700,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   "Surat",
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.grey.shade700,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
